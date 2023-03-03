@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <title>Weather Detector</title>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: aliceblue;
+        }
+
+        .blue-color {
+            background-color: #caf0f8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="blue-color navbar navbar-expand-lg">
+        <div class="container-fluid blue-color">
+            <a class="navbar-brand heading" href="#">Weather Detector</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Cities
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="getWeather('Delhi')">Delhi</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="getWeather('Tokyo')">Tokyo</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="getWeather('Ontario')">Ontario</a></li>
+                        
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search for city" aria-label="Search" id="city" >
+                    <button class="btn btn-outline-dark" type="submit" id="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <h2 class="center heading my-5">Weather of <span id="cityName"></span></h2>
+
+    <div class="container">
+        <div class="card-deck flex mb-3 text-center">
+            <div class="card mb-4 col-4 box-shadow">
+                <div class="card-header blue-color">
+                    <h4 class="my-0 heading">Temperature</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><span id="temp"></span> <small class="text-muted">°C</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Min temperature is <span id="min_temp"></span></li>
+                        <li>Feels like <span id="feels_like"></span></li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="card mb-4 col-4 box-shadow">
+                <div class="card-header blue-color">
+                    <h4 class="my-0 heading">Humidity</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><span id="humidity"></span>  <small class="text-muted">%</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Sunrise <span id="sunrise"></span></li>
+                        <li>Sunset <span id="sunset"></span></li>
+                        
+                    </ul>
+
+                </div>
+            </div>
+
+
+            <div class="card mb-4 col-4 box-shadow">
+                <div class="card-header blue-color">
+                    <h4 class="my-0 heading">Wind Speed</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><span id="wind_speed"></span> <small class="text-muted">m/s</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Wind Degrees is <span id="wind_degrees"></span></li>
+                        
+                        <li>Cloud PCT <span id="cloud_pct"></span></li>
+                        
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

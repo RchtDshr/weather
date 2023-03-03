@@ -1,0 +1,38 @@
+body {
+    background-color: beige;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.heading {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.center {
+    text-align: center;
+}
+
+.blue-color {
+    background-color: #caf0f8;
+}
+
+@media (max-width:400px) {
+    .card-deck{
+        flex-direction: column;
+        
+    }
+}
+:root{
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+}
